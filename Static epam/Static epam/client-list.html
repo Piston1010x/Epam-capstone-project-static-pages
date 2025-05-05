@@ -1,0 +1,137 @@
+<!-- templates/admin/client-list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clients</title>
+
+  <!-- Bootstrap & Icons -->
+  <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+  <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+          rel="stylesheet">
+
+  <style>
+    /* Hover highlight */
+    .table-hover tbody tr:hover { background-color: #f5f5f5; }
+    /* Sticky table header */
+    .sticky-header th {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body class="p-4">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="dashboard.html">Invoicer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="invoice-list.html">Invoices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="client-list.html">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="login.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Navbar -->
+<div></div>
+
+<!-- Header -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="h3">Clients</h1>
+  <a href="client-form.html" class="btn btn-primary">
+    <i class="bi bi-plus-lg"></i> New Client
+  </a>
+</div>
+
+<!-- Clients Table -->
+<div class="table-responsive mb-3" style="max-height:60vh; overflow-y:auto;">
+  <table class="table table-striped table-hover align-middle">
+    <thead class="table-light sticky-header">
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th class="text-end">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>
+        <a>EPAM Systems</a>
+      </td>
+      <td>
+        <a>user@example.com</a>
+      </td>
+      <td>
+        <a>+1234567890</a>
+      </td>
+      <td class="text-end">
+        <!-- Edit -->
+        <a
+           class="btn btn-sm btn-outline-secondary"
+           title="Edit">
+          <i class="bi bi-pencil-fill"></i>
+        </a>
+
+        <!-- Delete -->
+        <form
+              method="post" style="display:inline"
+              onsubmit="return confirm('Delete this client?');">
+          <button type="submit"
+                  class="btn btn-sm btn-outline-danger"
+                  title="Delete">
+            <i class="bi bi-trash-fill"></i>
+          </button>
+        </form>
+
+        <!-- New Invoice -->
+
+
+    <!-- Empty state -->
+    <tr>
+      <td colspan="4" class="text-center text-muted">
+        No clients found.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Pagination (only when >1 page) -->
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    <li class="page-item">
+      <a class="page-link">&laquo;</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link">&raquo;</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
